@@ -10,11 +10,26 @@
     z-index: 1;
     pointer-events: none;
   }
+  /* The grid plane pivots about its own centre, which sits on the top edge of
+     the viewport. rotateX(82deg) sends a point --grid-depth away from that
+     centre to z = --grid-depth * sin(82deg), and anything at or past the
+     perspective distance (1000px) lands on/behind the camera. That makes the
+     projection degenerate, and Chrome then rasterises this layer OVER the page
+     content instead of behind it -- z-index does not save us, because a 3D
+     transform gives the element its own render surface.
+
+     A scrolling .container happens to mask the bug (its composited scroll layer
+     wins), so it only showed up on pages short enough to fit the viewport.
+     Keep --grid-depth * sin(82deg) safely under 1000px and the plane stays in
+     front of the camera. 975px -> z = 966px, which still projects far enough
+     down the screen to cover viewports several thousand pixels tall. */
   .bgAnimation {
+    --grid-depth: 975px;
+
     position: fixed;
     width: 200vw;
-    height: 400vh;
-    top: -200vh;
+    height: calc(var(--grid-depth) * 2);
+    top: calc(var(--grid-depth) * -1);
     left: -50%;
     background-color: #080808;
     overflow: hidden;

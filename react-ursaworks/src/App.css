@@ -29,6 +29,10 @@ html {
 }
 
 body {
+  /* The page reads as dark on its own, rather than relying on .bgAnimation to
+     paint the backdrop -- that layer is sized in px, so a tall enough viewport
+     can out-run it. Also avoids a white flash before styles settle. */
+  background-color: #080808;
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
