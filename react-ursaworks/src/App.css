@@ -1,14 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-/* 
-font-family: "Roboto", sans-serif;
-font-family: "Roboto Serif",serif;
-font-family: "Roboto Condensed",sans-serif;
-font-family: "Roboto Slab", serif; 
-font-family: "Inter", sans-serif;
-*/
-
+/* Site typography: IBM Plex Sans for body copy, Barlow Condensed for headings. */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -19,7 +10,11 @@ font-family: "Inter", sans-serif;
   /* Shared content measure. Every page centers its column on this so the
      site reads as one width instead of stretching edge to edge. */
   --content-max: 70rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Barlow Condensed", sans-serif;
 }
 
 html {
