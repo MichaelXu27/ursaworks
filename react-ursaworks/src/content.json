@@ -73,7 +73,7 @@
   "events": [
     {
       "name": "ARCC 2026",
-      "location": "Purdue University, IN",
+      "location": "Purdue, IN",
       "date": "Jun 29. 2026",
       "image": "2026ARCUrsaworks-Team-Photo-1.webp",
       "result": "Top 8 · 1v1 Division"
@@ -86,7 +86,7 @@
     },
     {
       "name": "Midwest 2025",
-      "location": "Purdue University, IN",
+      "location": "Purdue, IN",
       "date": "Apr 06. 2025",
       "image": "2025midwest.jpg"
     },
@@ -98,7 +98,7 @@
     },
     {
       "name": "Midwest 2024",
-      "location": "Purdue University, IN",
+      "location": "Purdue, IN",
       "date": "Mar 23. 2024",
       "image": "2024midwest.jpg"
     },
@@ -110,7 +110,7 @@
     },
     {
       "name": "Midwest 2023",
-      "location": "Purdue University, IN",
+      "location": "Purdue, IN",
       "date": "Mar 25. 2023",
       "image": "2023midwest.jpg"
     }
