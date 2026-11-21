@@ -11,6 +11,9 @@
 # production
 /build
 
+# vite dependency pre-bundle cache
+/.vite
+
 # misc
 .DS_Store
 .env.local

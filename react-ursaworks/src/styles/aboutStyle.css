@@ -15,12 +15,22 @@
     align-items: flex-start;
 }
 
+/* Mission copy + image on top, the highlight cards in a row beneath. */
+.missionSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
 .ourMission{
     width: 100%;
     display: flex;
     gap: 4rem;
     justify-content: flex-start;
-    align-items: flex-start;
+    /* The mission copy is shorter than the photo; center it on the photo's
+       height rather than leaving it hanging at the top. */
+    align-items: center;
 }
 .aboutLeft{
     width: 50%;
@@ -43,22 +53,30 @@
     line-height: 1.44;
 }
 
-/* Layout only — the card's look comes from InfoCard (infoCardStyle.css). */
+/* Three equal columns; stretch keeps the cards the same height even when
+   their copy wraps to different lengths. */
+.missionHighlights{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* Layout only — the card's look comes from InfoCard (infoCardStyle.css).
+   The card's default 2rem title is sized for a full-width card; a third of
+   the row needs a smaller one so "All Majors, All Levels" doesn't crowd. */
 .highlightCard{
     width: 100%;
 }
+.highlightCard h3{
+    font-size: 1.6rem;
+}
 
-/* Sticky within .ourMission, so the image tracks the mission copy and then
-   releases at the bottom of that block — right as "What Is ARC" arrives.
-   Relies on .ourMission keeping align-items: flex-start; switching it to
-   stretch would make the flex item full-height and leave sticky no travel.
-   The offset clears the fixed navbar. */
 .aboutImage{
     width: 50%;
     border-radius: 0.4rem;
     object-fit: cover;
-    position: sticky;
-    top: 8rem;
 }
 
 /* The page container now supplies the measure and centering. */
@@ -75,19 +93,27 @@
     margin-top: 0;
 }
 
+/* Three columns get too narrow for the card copy before the mission/image
+   split does, so the cards stack first. */
+@media (max-width: 1024px) {
+    .missionHighlights{
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 758px) {
 
+    .missionSection,
+    .ourMission{
+        gap: 3rem;
+    }
     .ourMission{
         flex-direction: column;
-        gap: 3rem;
     }
     .aboutLeft {
         width: 100%;
     }
-    /* Stacked layout: the image is above the copy, not beside it, so there
-       is nothing to track — pinning it would just cover the text. */
     .aboutImage {
         width: 100%;
-        position: static;
     }
 }
