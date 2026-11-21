@@ -25,3 +25,13 @@ test('leads with the ARC section, then the mission', () => {
     const mission = screen.getByRole('heading', { name: /our mission/i });
     expect(arc.compareDocumentPosition(mission) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
 });
+
+test('lays the highlight cards out in their own row below the mission image', () => {
+    const { container } = render(<About />, { wrapper: MemoryRouter });
+    const image = screen.getByAltText('About');
+    const row = container.querySelector('.missionHighlights');
+    expect(row).not.toBeNull();
+    expect(row.querySelectorAll('.highlightCard')).toHaveLength(content.aboutHighlights.length);
+    expect(image.compareDocumentPosition(row) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(container.querySelector('.aboutLeft .highlightCard')).toBeNull();
+});

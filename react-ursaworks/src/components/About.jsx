@@ -15,10 +15,15 @@ export default function About({ aboutRef }) {
                 <h2 className="sectionTitle">{content.arc.title}</h2>
                 <Paragraphs className="aboutDesc" text={content.arc.description} />
             </div>
-            <div className="ourMission">
-                <div className="aboutLeft">
-                    <h2 className="sectionTitle">Our Mission</h2>
-                    <Paragraphs className="aboutDesc" text={content.intro} />
+            <div className="missionSection">
+                <div className="ourMission">
+                    <div className="aboutLeft">
+                        <h2 className="sectionTitle">Our Mission</h2>
+                        <Paragraphs className="aboutDesc" text={content.intro} />
+                    </div>
+                    <img src={loadImage('about', content.aboutImage)} alt="About" className="aboutImage" />
+                </div>
+                <div className="missionHighlights">
                     {content.aboutHighlights.map((highlight) => (
                         <InfoCard
                             className="highlightCard"
@@ -29,7 +34,6 @@ export default function About({ aboutRef }) {
                         />
                     ))}
                 </div>
-                <img src={loadImage('about', content.aboutImage)} alt="About" className="aboutImage" />
             </div>
             <NextPageLink to="/events" label="See All Events" />
         </div>
