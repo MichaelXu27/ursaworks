@@ -4,6 +4,7 @@ import content from "../content.json";
 import locationIcon from '../assets/logoItems/locationIcon.svg';
 import calendarIcon from '../assets/logoItems/calendarIcon.svg';
 import NextPageLink from './NextPageLink';
+import InfoCard from './InfoCard';
 import '../styles/eventStyle.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
@@ -36,11 +37,13 @@ export default function Event({ eventsRef }) {
                             We have two primary events that we attend each year.
                         </p>
                         {content.competitions.map((competition) => (
-                            <div className="competitionCard" key={competition.name}>
-                                <span className="competitionTag">{competition.tag}</span>
-                                <h3>{competition.name}</h3>
-                                <p>{competition.description}</p>
-                            </div>
+                            <InfoCard
+                                className="competitionCard"
+                                key={competition.name}
+                                title={competition.name}
+                                tag={competition.tag}
+                                text={competition.description}
+                            />
                         ))}
                         <a className="moreAboutLink" href={content.contact.arcWebsite} target="_blank" rel="noopener noreferrer">
                             <span>More About ARC</span>

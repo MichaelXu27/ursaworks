@@ -5,6 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import content from '../../content.json';
 import loadImage from '../../configs/loadImages';
 import Reveal from './Reveal';
+import InfoCard from '../InfoCard';
 import '../../styles/homeStyle.css';
 
 // The teaser shows one sentence per robot; full descriptions live on /robots.
@@ -33,11 +34,12 @@ export default function RobotsTeaser() {
                         alt={robot.name}
                         className="teaserRobotImage"
                     />
-                    <div className="teaserRobotText">
-                        <span className="teaserRobotTag">{robot.tag}</span>
-                        <h3>{robot.name}</h3>
-                        <p>{firstSentence(robot.description)}</p>
-                    </div>
+                    <InfoCard
+                        className="teaserRobotText"
+                        title={robot.name}
+                        tag={robot.tag}
+                        text={firstSentence(robot.description)}
+                    />
                 </Reveal>
             ))}
             <Reveal className="homeSectionInner">

@@ -1,7 +1,7 @@
 import React from 'react';
 import loadImage from '../configs/loadImages';
 import content from "../content.json";
-import Paragraphs from './Paragraphs';
+import InfoCard from './InfoCard';
 import NextPageLink from './NextPageLink';
 
 import '../styles/robotsStyle.css';
@@ -15,11 +15,7 @@ export default function Robots({ robotsRef }) {
                 {content.robots.map((robot) => (
                     <div className="robot" key={robot.name}>
                         <img src={loadImage('robots', robot.image)} alt={robot.name} className="robotImage" />
-                        <div className="robotDesc">
-                            <span className="robotTag">{robot.tag}</span>
-                            <h3>{robot.name}</h3>
-                            <Paragraphs text={robot.description} />
-                        </div>
+                        <InfoCard className="robotDesc" title={robot.name} tag={robot.tag} text={robot.description} />
                     </div>
                 ))}
             </div>

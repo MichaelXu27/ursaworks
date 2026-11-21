@@ -35,7 +35,7 @@
 
 .robotsIntro{
     color: #dddddd;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.44;
 }
@@ -56,56 +56,9 @@
     background-repeat: no-repeat;
 }
 
+/* Layout only — the card's look comes from InfoCard (infoCardStyle.css). */
 .robotDesc{
     width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    row-gap: 0.6rem;
-    padding: 1.6rem 2rem;
-    border-radius: 0.4rem;
-    background: rgba(255, 255, 255, 0.05);
-}
-/* The card's 0.6rem row-gap is tuned for tag -> title -> body. Paragraphs
-   within the body need a clearer break than that. */
-.robotDesc p + p{
-    margin-top: 0.6rem;
-}
-
-.robotTag{
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #E87ABA;
-}
-.robotDesc h3{
-    font-size: 2rem;
-    font-weight: 500;
-    color: #fff;
-}
-.robotDesc p{
-    color: #cdcdcd;
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 1.44;
-}
-
-
-@media (max-width: 955px) {
-
-    .robotsIntro{
-        font-size: 1.4rem;
-    }
-
-    .robotDesc h3{
-        font-size: 1.8rem;
-    }
-
-    .robotDesc p{
-        font-size: 1.4rem;
-    }
 }
 
 @media (max-width: 758px) {
