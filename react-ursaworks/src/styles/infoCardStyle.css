@@ -1,0 +1,39 @@
+/* Shared label card (components/InfoCard.jsx). No width here: each caller's
+   layout class decides how wide the card sits. */
+.infoCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 0.6rem;
+    padding: 1.6rem 2rem;
+    border-radius: 0.4rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.infoCard h3{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.infoCardTag{
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #E87ABA;
+}
+
+.infoCard p{
+    color: #cdcdcd;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.44;
+}
+
+/* The 0.6rem row-gap is tuned for heading -> label -> body. Paragraphs
+   within the body need a clearer break than that. */
+.infoCard p + p{
+    margin-top: 0.6rem;
+}

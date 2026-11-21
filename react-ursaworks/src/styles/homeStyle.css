@@ -64,7 +64,7 @@
 
 .missionIntro {
     color: #dddddd;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
     max-width: 62rem;
@@ -92,35 +92,9 @@
     background-repeat: no-repeat;
 }
 
+/* Layout only — the card's look comes from InfoCard (infoCardStyle.css). */
 .teaserRobotText {
     width: 60%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.6rem;
-    padding: 1.6rem 2rem;
-    border-radius: 0.4rem;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.teaserRobotTag {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #E87ABA;
-}
-
-.teaserRobotText h3 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #fff;
-}
-
-.teaserRobotText p {
-    color: #cdcdcd;
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 1.44;
 }
 
 .teaserEvent {
@@ -190,7 +164,7 @@
 
 .joinCtaText {
     color: #dddddd;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 300;
 }
 

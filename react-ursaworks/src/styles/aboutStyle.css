@@ -38,37 +38,14 @@
 
 .aboutDesc{
     color: #dddddd;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.44;
 }
 
+/* Layout only — the card's look comes from InfoCard (infoCardStyle.css). */
 .highlightCard{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    padding: 1.6rem 2rem;
-    border-radius: 0.4rem;
-    background: rgba(255, 255, 255, 0.05);
-}
-.highlightTag{
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #E87ABA;
-}
-.highlightCard h3{
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #fff;
-}
-.highlightCard p{
-    color: #cdcdcd;
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.44;
 }
 
 /* Sticky within .ourMission, so the image tracks the mission copy and then
@@ -96,13 +73,6 @@
    the component's own top margin would stack on top of it. */
 #aboutBlock .nextPageLink{
     margin-top: 0;
-}
-
-@media (max-width: 955px) {
-
-    .aboutDesc{
-        font-size: 1.4rem;
-    }
 }
 
 @media (max-width: 758px) {

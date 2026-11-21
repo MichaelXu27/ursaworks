@@ -57,7 +57,7 @@
 }
 .robomasterDesc {
   color: #dddddd;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.44;
 }
@@ -100,21 +100,9 @@
   color: #cdcdcd;
 }
 
+/* Layout only — the card's look comes from InfoCard (infoCardStyle.css). */
 .competitionCard{
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.6rem 2rem;
-  border-radius: 0.4rem;
-  background: rgba(255, 255, 255, 0.05);
-}
-.competitionTag{
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #E87ABA;
 }
 .eventResult{
   display: block;
@@ -125,18 +113,6 @@
   text-transform: uppercase;
   color: #E87ABA;
 }
-.competitionCard h3{
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #fff;
-}
-.competitionCard p{
-  color: #cdcdcd;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 1.44;
-}
-
 .moreAboutLink {
   color: white;
   padding: 0.6rem 1.4rem;
