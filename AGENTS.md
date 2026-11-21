@@ -62,4 +62,4 @@ Each robot/event/member entry references an image by filename (e.g. `"image": "h
 
 **GitHub Pages routing:** clean paths require `base: '/'` in `vite.config.mjs` (site is served at the custom-domain root, see `public/CNAME`) plus a `public/404.html` SPA-redirect shim and a companion restore snippet in `index.html`. The 404 shim only activates on live Pages — local `dev`/`preview` have their own SPA fallback.
 
-**Dormant code — not wired into the app:** `screens/Management.jsx`, `apis/apiFunctions.js` (a CRUD admin panel against a `PLACEHOLDER_ENDPOINT`), and `components/Team.jsx` (has no route). Don't assume these run; check `GlobalController.jsx` for what's actually routed. (`screens/Main.jsx`, the old single-page composition, was removed in the routing refactor.)
+**Dormant code — not wired into the app:** `components/Team.jsx` (has no route). Don't assume it runs; check `GlobalController.jsx` for what's actually routed. (`screens/Main.jsx`, the old single-page composition, was removed in the routing refactor; the unused `screens/Management.jsx` admin panel and `apis/apiFunctions.js` were removed later.)
