@@ -40,19 +40,38 @@
   }
 
   .bgAnimationGrid {
+    --grid-line: 0.5px;
+
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: calc(100% + 1.6rem);
     background-image:
-      linear-gradient(#222222 0.5px, transparent 0.5px),
-      linear-gradient(90deg, #222222 0.5px, transparent 0.5px);
+      linear-gradient(#222222 var(--grid-line), transparent var(--grid-line)),
+      linear-gradient(90deg, #222222 var(--grid-line), transparent var(--grid-line));
     background-size: 1.6rem 1.6rem;
 
     /* Animation: transform (compositor-only) instead of background-position, which forces a repaint of the whole grid every frame */
     animation: moveGrid 2s linear infinite;
     will-change: transform;
+  }
+
+  /* Browser zoom-out (Ctrl -) lowers the device pixel ratio, shrinking each
+     0.5px line to a fraction of a device pixel -- squashed further by the 82deg
+     tilt -- until Chrome rasterises the gradient stripes to nothing and the
+     grid vanishes. Below 1dppx, thicken the lines so they stay visible.
+     Zoom levels 90%+ on a 1x display, and all hi-DPI cases, keep 0.5px. */
+  @media (max-resolution: 0.85dppx) {
+    .bgAnimationGrid {
+      --grid-line: 1px;
+    }
+  }
+
+  @media (max-resolution: 0.55dppx) {
+    .bgAnimationGrid {
+      --grid-line: 1.5px;
+    }
   }
 
   @keyframes moveGrid {
