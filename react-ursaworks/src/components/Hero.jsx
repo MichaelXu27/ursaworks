@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import ScrollContainerContext from '../configs/ScrollContainerContext';
-import stars from '../assets/logoItems/starAndBear.svg';
+import stars from '../assets/logoItems/bear-walk-in-place.svg';
 import '../styles/heroStyle.css';
 
 export default function Hero() {
