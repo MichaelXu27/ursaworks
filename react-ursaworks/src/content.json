@@ -3,7 +3,7 @@
     "At Ursaworks, our mission is to advance robotics and industry by bringing together students who are passionate about innovation. Our focus is on fostering a collaborative environment where students from any background can develop their skills through competition.",
     "We're committed to nurturing talent and promoting hard work to prepare our members for future challenges in technology. All WashU students are welcome to join and participate!"
   ],
-  "ourRobot": "Each year, the ARC Robotics Competition challenges teams to design and build robots for a combat-style game. Last season, we developed and tested these 3 robots:",
+  "ourRobot": "Each year, the ARC Robotics Competition challenges teams to design and build robots for a combat-style game. Last season, we developed and tested the Infantry, Sentry, and Hero, and this season we're adding an Engineer:",
   "aboutImage": "frontPage.png",
   "aboutHighlights": [
     {
@@ -56,6 +56,18 @@
         "Its higher survivability and firepower make it the focal point of many strategies, with teams relying on it to break stalemates and secure key objectives."
       ],
       "image": "hero_2026_tournament.png"
+    },
+    {
+      "name": "Engineer",
+      "status": "Work in Progress",
+      "tag": "Driver Controlled · No Launcher · 3v3",
+      "description": [
+        "The Engineer trades firepower for dexterity: it carries no launcher, but it is the only robot allowed to handle the Objectives that score Victory Points. Using its arm and claw, it lifts the cube off the Central High Ground, pulls pipes from the central bucket and feeds them through the Pipe Chute, and recovers donuts from the zig-zag poles.",
+        "With 600 HP, the most of any robot in the 3v3 lineup, the Engineer is built to keep working under fire while teammates cover it. Its claw is designed to fail safe, springing open on its own if the robot is defeated so it never keeps holding an Objective.",
+        "The Engineer is new for the 2026–27 season and still in development. The image shown is an early concept sketch, not the final robot."
+      ],
+      "image": "engineerr_sketch_robot_transparent.png",
+      "imageAlt": "Engineer concept sketch (work in progress)"
     }
   ],
   "competitions": [

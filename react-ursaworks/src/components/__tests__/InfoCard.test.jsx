@@ -25,6 +25,24 @@ test('omits the tag when none is given', () => {
     expect([...container.firstChild.children].map((el) => el.tagName)).toEqual(['H3', 'P']);
 });
 
+test('renders a badge between the heading and the tag when given', () => {
+    const { container } = render(<InfoCard title="Engineer" badge="Work in Progress" tag="T" text="x" />);
+    const card = container.firstChild;
+    expect([...card.children].map((el) => el.className || el.tagName)).toEqual([
+        'H3',
+        'infoCardBadge',
+        'infoCardTag',
+        'P',
+    ]);
+    expect(card.children[0]).toHaveTextContent(/^Engineer$/);
+    expect(card.children[1]).toHaveTextContent('Work in Progress');
+});
+
+test('omits the badge when none is given', () => {
+    const { container } = render(<InfoCard title="Hero" tag="T" text="x" />);
+    expect(container.querySelector('.infoCardBadge')).toBeNull();
+});
+
 test('adds a layout class alongside infoCard', () => {
     const { container } = render(<InfoCard className="robotDesc" title="Hero" text="x" />);
     expect(container.firstChild.className).toBe('infoCard robotDesc');

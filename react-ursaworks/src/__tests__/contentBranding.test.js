@@ -28,8 +28,8 @@ test.each(chromeSources)('%s carries no leftover RoboMaster branding', (relative
     expect(source).not.toMatch(/robomaster/i);
 });
 
-test('robots are ordered Infantry, Sentry, Hero', () => {
-    expect(content.robots.map((robot) => robot.name)).toEqual(['Infantry', 'Sentry', 'Hero']);
+test('robots are ordered Infantry, Sentry, Hero, Engineer', () => {
+    expect(content.robots.map((robot) => robot.name)).toEqual(['Infantry', 'Sentry', 'Hero', 'Engineer']);
 });
 
 test('competition tags carry no location', () => {
