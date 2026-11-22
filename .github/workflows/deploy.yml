@@ -28,8 +28,7 @@ jobs:
           cache: npm
           cache-dependency-path: react-ursaworks/package-lock.json
 
-      # syncAssets.js reads from ../content/assets, so it needs the full repo
-      # checkout above. build outputs to react-ursaworks/build (see vite.config.mjs).
+      # build outputs to react-ursaworks/build (see vite.config.mjs).
       - name: Install dependencies
         working-directory: react-ursaworks
         run: npm ci
