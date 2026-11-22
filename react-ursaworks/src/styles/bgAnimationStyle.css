@@ -39,8 +39,14 @@
     z-index: -1 !important;
   }
 
+  /* Chrome drops these gradient hairlines entirely once they're thinner than
+     half a device pixel -- which 0.5px becomes at any browser zoom below 100%
+     (Ctrl -). So hold the line at ~0.55 device px by dividing by the device
+     pixel ratio (--dpr, set from JS by useDevicePixelRatioVar), never going
+     below the original 0.5px. At 100% zoom and on hi-DPI screens this is
+     unchanged; zoomed out, the line widens in CSS px to stay visible. */
   .bgAnimationGrid {
-    --grid-line: 0.5px;
+    --grid-line: max(0.5px, calc(0.55px / var(--dpr, 1)));
 
     position: absolute;
     top: 0;
@@ -55,23 +61,6 @@
     /* Animation: transform (compositor-only) instead of background-position, which forces a repaint of the whole grid every frame */
     animation: moveGrid 2s linear infinite;
     will-change: transform;
-  }
-
-  /* Browser zoom-out (Ctrl -) lowers the device pixel ratio, shrinking each
-     0.5px line to a fraction of a device pixel -- squashed further by the 82deg
-     tilt -- until Chrome rasterises the gradient stripes to nothing and the
-     grid vanishes. Below 1dppx, thicken the lines so they stay visible.
-     Zoom levels 90%+ on a 1x display, and all hi-DPI cases, keep 0.5px. */
-  @media (max-resolution: 0.85dppx) {
-    .bgAnimationGrid {
-      --grid-line: 1px;
-    }
-  }
-
-  @media (max-resolution: 0.55dppx) {
-    .bgAnimationGrid {
-      --grid-line: 1.5px;
-    }
   }
 
   @keyframes moveGrid {
