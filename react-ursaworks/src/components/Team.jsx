@@ -1,26 +1,40 @@
 import React from 'react';
-import loadImage from '../configs/loadImages';
 import content from "../content.json";
+import MemberCard from './MemberCard';
 import '../styles/teamStyle.css';
-import memberPlaceholder from '../assets/members/memberPlaceholder.png';
 
-export default function Team({ teamsRef }) {
+function TeamGroup({ name, subtitle, members, featured = false }) {
+    const count = `${members.length} ${members.length === 1 ? 'member' : 'members'}`;
+
     return (
-        <div className="infoBlock" id="teamBlock" ref={teamsRef}>
-            <h2 className="sectionTitle">Our Team</h2>
-            <div className="teamContent">
-                {content.team.map((team, index) => (
-                    <div className="teamMember" key={index}>
-                        <img 
-                            src={loadImage('members', team.image)} 
-                            alt={team.name} 
-                            onError={(e) => e.target.src = memberPlaceholder} 
-                        />
-                        <h5>{team.name}</h5>
-                        <p>{team.position}</p>
-                    </div>
+        <section className={`teamGroup${featured ? ' teamGroupFeatured' : ''}`}>
+            <header className="teamGroupHeader">
+                <h3>{name}</h3>
+                {subtitle && <p className="teamGroupSubtitle">{subtitle}</p>}
+                <p className="teamGroupCount">{count}</p>
+            </header>
+            <div className="teamGrid">
+                {members.map((member, index) => (
+                    <MemberCard key={`${member.name}-${index}`} {...member} />
                 ))}
             </div>
+        </section>
+    );
+}
+
+export default function Team() {
+    const { intro, leadership, subteams } = content.team;
+
+    return (
+        <div className="infoBlock" id="teamBlock">
+            <h2 className="sectionTitle">Our Team</h2>
+            {intro && <p className="teamIntro">{intro}</p>}
+            <TeamGroup name="Leadership" members={leadership} featured />
+            {subteams
+                .filter((subteam) => subteam.members?.length > 0)
+                .map((subteam) => (
+                    <TeamGroup key={subteam.name} {...subteam} />
+                ))}
         </div>
     );
 }

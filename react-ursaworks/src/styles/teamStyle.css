@@ -1,67 +1,199 @@
+@import url(../App.css);
+
+/* Same box as the other content pages so "Our Team" sits at the same height
+   under the fixed navbar as About / Events / Robots. */
 #teamBlock {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100vw;
+    max-width: var(--content-max);
+    margin: 0 auto;
     height: auto;
     z-index: 3;
-    padding: 0 4rem;
+    padding: 6.4rem 2rem;
     padding-top: 10rem;
-    margin-top: 2rem;
+    gap: 4.8rem;
 }
 
-.teamContent {
+#teamBlock > .sectionTitle,
+.teamIntro {
+    width: 100%;
+    text-align: center;
+}
+
+#teamBlock > .sectionTitle {
+    margin-bottom: -3.6rem;
+}
+
+.teamIntro {
+    max-width: 38rem;
+    margin: 0 auto;
+    color: #dddddd;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.44;
+}
+
+/* ---- Group: heading row + grid ------------------------------------------ */
+
+.teamGroupHeader {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: baseline;
     flex-wrap: wrap;
-    column-gap: 0.8rem;
-    row-gap: 3rem;
-    margin-top: 3rem;
+    column-gap: 1rem;
+    row-gap: 0.2rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.teamMember {
+.teamGroupHeader h3 {
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.teamGroupSubtitle {
+    color: #E87ABA;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Pushed to the far end of the rule: tells you the group's size at a glance. */
+.teamGroupCount {
+    margin-left: auto;
+    color: #8f8f8f;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    column-gap: 1.6rem;
+    row-gap: 2.4rem;
+}
+
+.teamGroupFeatured .teamGrid {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    column-gap: 2rem;
+}
+
+/* ---- Member card --------------------------------------------------------- */
+
+.memberCard {
     display: flex;
     flex-direction: column;
-    width: calc(20% - 3.2rem/5);
+    min-width: 0;
 }
 
-.teamMember img {
+/* The photo sits on a light bar, like the LED strip on a RoboMaster armor
+   plate. That bar is the page's one accent; everything else stays quiet. */
+.memberPhoto {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.memberPhoto img {
+    display: block;
     width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 0.4rem;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    margin-bottom: 0.8rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background: rgba(255, 255, 255, 0.05);
 }
 
-.teamMember h5 {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: white;
-    margin-bottom: 0.1rem;
-    text-transform: capitalize;
+.memberPhoto::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: var(--main-grad);
+    border-radius: 0 0 2px 2px;
+    opacity: 0.55;
 }
 
-.teamMember p {
-    font-weight: 400;
-    font-size: 1.2rem;
+.teamGroupFeatured .memberPhoto::after {
+    height: 4px;
+    opacity: 1;
+    box-shadow: 0 0 14px 1px rgba(200, 113, 199, 0.55);
+}
+
+.memberName {
+    font-family: "Barlow Condensed", sans-serif;
     color: #fff;
-    text-transform: capitalize;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
 }
 
-@media screen and (max-width: 1188px){
-    .teamMember {
-        width: calc(25% - 2.4rem/4);
-    }    
+.teamGroupFeatured .memberName {
+    font-size: 1.75rem;
 }
-@media screen and (max-width: 911px){
-    .teamMember {
-        width: calc(33.3333% - 1.6rem/3);
-    }    
+
+.memberRole {
+    margin-top: 0.2rem;
+    color: #bdbdbd;
+    font-size: 0.95rem;
+    font-weight: 400;
+    overflow-wrap: anywhere;
 }
-/* @media screen and (max-width: 627px){
-    .teamMember {
-        width: calc(50% - 0.8rem/2);
-    }    
-} */
+
+.memberLinks {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    margin-left: -0.4rem;
+}
+
+.memberLinks a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.3rem;
+    color: #9a9a9a;
+    font-size: 1.1rem;
+    transition: color 0.15s ease;
+}
+
+.memberLinks a:hover {
+    color: #E87ABA;
+}
+
+.memberLinks a:focus-visible {
+    color: #E87ABA;
+    outline: 2px solid #E87ABA;
+    outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .memberLinks a {
+        transition: none;
+    }
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+
+@media (max-width: 758px) {
+    #teamBlock {
+        width: 100%;
+        min-width: 0;
+        padding: 10rem 1.25rem 4rem;
+        gap: 3.6rem;
+    }
+
+    #teamBlock > .sectionTitle {
+        margin-bottom: -2.4rem;
+    }
+
+    .teamGrid,
+    .teamGroupFeatured .teamGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 1rem;
+        row-gap: 2rem;
+    }
+}
