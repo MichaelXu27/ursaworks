@@ -298,23 +298,6 @@
     "email": "ursaworksrobotics@gmail.com",
     "instagramHandle": "@washu.ursaworks",
     "instagramUrl": "https://www.instagram.com/washu.ursaworks/",
-    "arcWebsite": "https://arc-robotics.org/",
-    "officers": [
-      {
-        "name": "Naomi Hsieh",
-        "role": "President",
-        "email": "hnaomi@wustl.edu"
-      },
-      {
-        "name": "Baiming Zhang",
-        "role": "Vice President",
-        "email": "baiming@wustl.edu"
-      },
-      {
-        "name": "Daphanie Hsieh",
-        "role": "Secretary",
-        "email": "d.hsieh@wustl.edu"
-      }
-    ]
+    "arcWebsite": "https://arc-robotics.org/"
   }
 }

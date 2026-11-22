@@ -1,33 +1,33 @@
 @import url(../App.css);
 
+/* Sits below the team roster, not under the navbar, so it uses the regular
+   section padding rather than the 10rem navbar clearance. */
 #contactBlock {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     width: 100vw;
     max-width: var(--content-max);
     margin: 0 auto;
     height: auto;
     z-index: 3;
-    padding: 6.4rem 2rem;
-    padding-top: 10rem;
+    padding: 2rem 2rem 6.4rem;
+    gap: 1.6rem;
+    text-align: center;
 }
 
-.contactContent {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    margin-top: 3rem;
+.contactIntro {
+    color: #dddddd;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.44;
+    margin-top: -0.8rem;
 }
 
-/* One link per line. align-items keeps each pill the width of its own
-   label instead of stretching them all to the column width. */
 .contactLinks {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.2rem;
 }
 
@@ -40,7 +40,7 @@
     background: var(--main-grad);
     border-radius: 0.4rem;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -48,102 +48,37 @@
     filter: brightness(1.2);
 }
 
+.contactLink:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
 .contactLink img {
     width: 1.6rem;
     height: 1.6rem;
-}
-
-.contactOfficers h3 {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 1.6rem;
-}
-
-.officerList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.officerCard {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.4rem;
-    padding: 1.6rem 2rem;
-    border-radius: 0.4rem;
-    background: rgba(255, 255, 255, 0.05);
-    min-width: 20rem;
-}
-
-.officerCard h5 {
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: white;
-}
-
-.officerRole {
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: #cdcdcd;
-}
-
-.officerEmail {
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: #cdcdcd;
-    text-decoration: none;
-}
-
-.officerEmail:hover {
-    color: white;
 }
 
 @media (max-width: 758px) {
     #contactBlock {
         width: 100%;
         min-width: 0;
-        padding: 8rem 1.25rem 4rem;
-    }
-
-    .contactContent {
-        width: 100%;
-        min-width: 0;
+        padding: 1rem 1.25rem 4rem;
     }
 
     .contactLinks {
         width: 100%;
-        min-width: 0;
         flex-direction: column;
-        align-items: flex-start;
         gap: 1rem;
     }
 
     .contactLink {
         width: 100%;
         min-width: 0;
-        max-width: 100%;
+        justify-content: center;
         padding: 1rem 1.25rem;
     }
 
     .contactLink span {
-        overflow-wrap: anywhere;
-    }
-
-    .officerList {
-        width: 100%;
-        min-width: 0;
-        gap: 1rem;
-    }
-
-    .officerCard {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-        padding: 1.25rem;
-    }
-
-    .officerEmail {
         overflow-wrap: anywhere;
     }
 }
