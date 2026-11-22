@@ -36,12 +36,31 @@
 .title {
     font-size: 5rem;
     font-weight: 800;
-    background-image: var(--main-grad);
+   
+    background-image:
+        linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.55) 50%, transparent 60%),
+        var(--main-grad);
+    background-size: 250% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 0, 0 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
     white-space: nowrap;
+    animation: titleShimmer 2s ease-in-out 1s infinite;
+}
+
+@keyframes titleShimmer {
+    0%   { background-position: 100% 0, 0 0; }
+    75%  { background-position: 0% 0, 0 0; }
+    100% { background-position: 0% 0, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title {
+        animation: none;
+    }
 }
 
 .subtitle {
