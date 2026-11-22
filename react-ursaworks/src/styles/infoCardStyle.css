@@ -25,6 +25,19 @@
     color: #E87ABA;
 }
 
+/* Status pill for unfinished entries. Dashed amber so it reads as
+   "not final" and stays distinct from the pink label below it. */
+.infoCardBadge{
+    padding: 0.2rem 0.6rem;
+    border: 1px dashed #F2C46D;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #F2C46D;
+}
+
 .infoCard p{
     color: #cdcdcd;
     font-size: 1rem;

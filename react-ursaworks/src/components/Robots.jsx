@@ -14,8 +14,8 @@ export default function Robots({ robotsRef }) {
                 <p className="robotsIntro">{content.ourRobot}</p>
                 {content.robots.map((robot) => (
                     <div className="robot" key={robot.name}>
-                        <img src={loadImage('robots', robot.image)} alt={robot.name} className="robotImage" />
-                        <InfoCard className="robotDesc" title={robot.name} tag={robot.tag} text={robot.description} />
+                        <img src={loadImage('robots', robot.image)} alt={robot.imageAlt || robot.name} className="robotImage" />
+                        <InfoCard className="robotDesc" title={robot.name} badge={robot.status} tag={robot.tag} text={robot.description} />
                     </div>
                 ))}
             </div>

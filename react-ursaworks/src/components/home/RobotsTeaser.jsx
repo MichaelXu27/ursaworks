@@ -31,12 +31,13 @@ export default function RobotsTeaser() {
                 >
                     <img
                         src={loadImage('robots', robot.image)}
-                        alt={robot.name}
+                        alt={robot.imageAlt || robot.name}
                         className="teaserRobotImage"
                     />
                     <InfoCard
                         className="teaserRobotText"
                         title={robot.name}
+                        badge={robot.status}
                         tag={robot.tag}
                         text={firstSentence(robot.description)}
                     />

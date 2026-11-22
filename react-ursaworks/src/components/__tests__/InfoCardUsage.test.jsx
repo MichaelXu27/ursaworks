@@ -16,6 +16,25 @@ const PAGES = [
     ['events competitions', Event, content.competitions.length, 'competitionCard'],
 ];
 
+// A robot entry with a `status` (e.g. "Work in Progress") is flagged with a
+// badge on both pages that show robots, so an unfinished robot never reads
+// as a fielded one.
+test.each([
+    ['robots page', Robots],
+    ['home robot teaser', RobotsTeaser],
+])('%s badges every robot that has a status', (_name, Page) => {
+    const { container } = render(<Page />, { wrapper: MemoryRouter });
+    const withStatus = content.robots.filter((robot) => robot.status);
+    expect(withStatus.length).toBeGreaterThan(0);
+
+    const badges = [...container.querySelectorAll('.infoCardBadge')];
+    expect(badges).toHaveLength(withStatus.length);
+    badges.forEach((badge, index) => {
+        expect(badge).toHaveTextContent(withStatus[index].status);
+        expect(badge.previousElementSibling).toHaveTextContent(withStatus[index].name);
+    });
+});
+
 test.each(PAGES)('%s renders its cards through InfoCard', (_name, Page, count, layoutClass) => {
     const { container } = render(<Page />, { wrapper: MemoryRouter });
     const cards = container.querySelectorAll(`.infoCard.${layoutClass}`);
