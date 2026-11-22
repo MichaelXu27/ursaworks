@@ -31,3 +31,14 @@ test('skips a subteam with no members', () => {
         content.team.subteams.pop();
     }
 });
+
+test('skips a subteam with no members list instead of crashing', () => {
+    content.team.subteams.push({ name: 'Stub Team' });
+    try {
+        render(<Team />);
+        expect(screen.getByRole('heading', { level: 2, name: 'Our Team' })).toBeInTheDocument();
+        expect(screen.queryByRole('heading', { name: 'Stub Team' })).toBeNull();
+    } finally {
+        content.team.subteams.pop();
+    }
+});

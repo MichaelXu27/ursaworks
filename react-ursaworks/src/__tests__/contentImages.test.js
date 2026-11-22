@@ -17,7 +17,7 @@ const supported = loaderSource.match(/\*\.\{([^}]+)\}/)[1].split(',');
 // falls back to a placeholder, so only members that name one are checked.
 const teamMembers = [
     ...content.team.leadership,
-    ...content.team.subteams.flatMap((subteam) => subteam.members),
+    ...content.team.subteams.flatMap((subteam) => subteam.members ?? []),
 ].filter((member) => member.image);
 
 const referencedImages = [

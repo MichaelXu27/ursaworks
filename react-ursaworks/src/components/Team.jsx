@@ -31,7 +31,7 @@ export default function Team() {
             {intro && <p className="teamIntro">{intro}</p>}
             <TeamGroup name="Leadership" members={leadership} featured />
             {subteams
-                .filter((subteam) => subteam.members.length > 0)
+                .filter((subteam) => subteam.members?.length > 0)
                 .map((subteam) => (
                     <TeamGroup key={subteam.name} {...subteam} />
                 ))}
