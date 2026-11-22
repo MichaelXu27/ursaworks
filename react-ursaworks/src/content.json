@@ -115,53 +115,185 @@
       "image": "2023midwest.jpg"
     }
   ],
-  "team": [
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    },
-    {
-      "name": "First Last",
-      "position": "position",
-      "image": "memberPlaceholder.png"
-    }
-  ],
+  "team": {
+    "intro": "Student leadership runs the club, and four subteams build the robots. Reach out to whoever works on what you are curious about.",
+    "leadership": [
+      {
+        "name": "Naomi Hsieh",
+        "role": "President",
+        "email": "hnaomi@wustl.edu"
+      },
+      {
+        "name": "Baiming Zhang",
+        "role": "Vice President",
+        "email": "baiming@wustl.edu"
+      },
+      {
+        "name": "Daphanie Hsieh",
+        "role": "Secretary",
+        "email": "d.hsieh@wustl.edu"
+      }
+    ],
+    "subteams": [
+      {
+        "name": "Mechanical",
+        "members": [
+          {
+            "name": "First Last",
+            "role": "Mechanical Lead"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Electrical",
+        "members": [
+          {
+            "name": "First Last",
+            "role": "Electrical Lead"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Software",
+        "subtitle": "Algorithm & Control",
+        "members": [
+          {
+            "name": "First Last",
+            "role": "Software Lead"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Business",
+        "members": [
+          {
+            "name": "First Last",
+            "role": "Business Lead"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          },
+          {
+            "name": "First Last",
+            "role": "Member"
+          }
+        ]
+      }
+    ]
+  },
   "contact": {
     "email": "ursaworksrobotics@gmail.com",
     "instagramHandle": "@washu.ursaworks",

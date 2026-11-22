@@ -13,11 +13,18 @@ const loaderSource = fs.readFileSync(
 );
 const supported = loaderSource.match(/\*\.\{([^}]+)\}/)[1].split(',');
 
+// Team members are grouped (leadership + subteams); image is optional and
+// falls back to a placeholder, so only members that name one are checked.
+const teamMembers = [
+    ...content.team.leadership,
+    ...content.team.subteams.flatMap((subteam) => subteam.members),
+].filter((member) => member.image);
+
 const referencedImages = [
     content.aboutImage,
     ...content.robots.map((robot) => robot.image),
     ...content.events.map((event) => event.image),
-    ...content.team.map((member) => member.image),
+    ...teamMembers.map((member) => member.image),
 ];
 
 test.each(referencedImages)('%s has an extension loadImages can resolve', (filename) => {
@@ -32,9 +39,9 @@ const referencedImagesByFolder = [
     { folder: 'about', filename: content.aboutImage },
     ...content.robots.map((robot) => ({ folder: 'robots', filename: robot.image })),
     ...content.events.map((event) => ({ folder: 'events', filename: event.image })),
-    // Team.jsx reads these from 'members', not 'team' — the folder name and the
+    // MemberCard reads these from 'members', not 'team' — the folder name and the
     // content key differ, which is exactly the kind of mismatch this catches.
-    ...content.team.map((member) => ({ folder: 'members', filename: member.image })),
+    ...teamMembers.map((member) => ({ folder: 'members', filename: member.image })),
 ];
 
 test.each(referencedImagesByFolder)(
